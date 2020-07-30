@@ -31,13 +31,13 @@ def getTime():
 
 def exit(message = None):
         try:
-                if message is not None:
+                if message != None:
                         printError(message)
                 if activeCount() > 1:
                         printError('!!!Killing all threads!!!')
                         while activeCount() > 1:
                                 sleep(0.001)
-                if flag is True:
+                if flag == True:
                         printInfo('All results have been dump in {}'.format(dumppath))
                 printError('Exiting script!!!')
                 sys.exit()
@@ -72,37 +72,37 @@ def main():
                 global api
                 global cve
                 currentpath = os.path.dirname(os.path.abspath(__file__))
-                if os.path.isfile(currentpath + "/api.key") is True:
-                        api_key = str(open("api.key","r").read())
-                        if api_key is not '':
+                if os.path.isfile(currentpath + "/api.key") == True:
+                        api_key = open("api.key","r").read().splitlines()[0]
+                        if api_key != '':
                                 api = Shodan(api_key)
                         else:
                                 exit("Please insert Shodan API key into filename api.key")
                         cve = CVESearch()
                 else:
-                        exit("api.key is not exist. Please create filename api.key with Shodan API key!")
+                        exit("api.key != exist. Please create filename api.key with Shodan API key!")
                         
-                if args.o is None:
-                        if os.path.isdir(currentpath + "/dump") is not True:
+                if args.o == None:
+                        if os.path.isdir(currentpath + "/dump") != True:
                                 os.mkdir(currentpath + "/dump")
                                 print(currentpath + "/dump", "is created")
                         dumppath = currentpath + "/dump/"
                 else:
-                        if os.path.isdir(args.o) is True:
+                        if os.path.isdir(args.o) == True:
                                 dumppath = args.o
-                                if (dumppath[len(dumppath) - 1] is not '/') or (dumppath[len(dumppath) - 1] is not "\\"):
+                                if (dumppath[len(dumppath) - 1] != '/') or (dumppath[len(dumppath) - 1] != "\\"):
                                         dumppath += "/"
                         else:
                                 exit('Your output path is invalid or not exist. Please try again!')
 
                 if (args.i == None) and (args.ip_list == None):
                         exit('You need to insert mandatory option. Use -h to show help')
-                elif  (args.i is not None) and (args.ip_list is not None):
+                elif  (args.i != None) and (args.ip_list != None):
                         exit('You must be use only 1 option. -i or --ip-list, not a both.')
-                elif args.i is not None:
+                elif args.i != None:
                         search(args.i)
                         exit('Scan ended!')
-                elif args.ip_list is not None:
+                elif args.ip_list != None:
                         filename = args.ip_list
                         fi = open(filename, "r")
                         iplist = fi.read().split("\n")
