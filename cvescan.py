@@ -63,6 +63,8 @@ def search(ip):
 
         except KeyboardInterrupt:
                 exit("User aborted!")
+        except KeyError:
+                exit('{} does not have vulnebilities'.format(ip))
         except Exception as e:
                 exit(e)
 
