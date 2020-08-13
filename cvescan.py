@@ -49,7 +49,7 @@ def search(ip):
                 global flag
                 s = api.host(ip)
 
-                if len(s['vulns']) > 0:
+                if 'vulns' in s:
                         flag = True
                         printComplete('{} have vulnebilities'.format(ip))
                         fo = open('{}{}.csv'.format(dumppath,ip),'w',newline='')
