@@ -1,5 +1,5 @@
 # CVEScan
-<h3>version 0.1-alpha</h3>
+<h3>version 0.2-alpha</h3>
 
 CVEScan is a open-source tool, that using Shodan API to scan CVE of hosts
 
