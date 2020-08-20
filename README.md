@@ -8,7 +8,7 @@ Screenshot
 
 ![screenshot0](https://github.com/n3r0-b1n4ry/cvescan/blob/master/img/img1.PNG)
 
-![screenshot0](https://github.com/n3r0-b1n4ry/cvescan/blob/master/img/img2.PNG)
+![screenshot0](https://github.com/n3r0-b1n4ry/cvescan/blob/master/img/img2.png)
 
 Installation
 ---
