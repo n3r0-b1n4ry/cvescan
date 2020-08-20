@@ -61,7 +61,7 @@ def search(ip,vuln):
                 else:
                         capec_name = 'Unknown'
                 if 'cvss' in json_cveid:
-                        cvss = cve.id(vuln)['cvss']
+                        cvss = json_cveid['cvss']
                 cveid = [vuln,capec_name,cvss]
                 tables[ip].append(cveid)
 
