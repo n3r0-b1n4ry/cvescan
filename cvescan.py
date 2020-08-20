@@ -5,8 +5,8 @@ from datetime import datetime
 from cvesearchapi import CVESearch, Texttable
 import os, sys, argparse
 
-intro_text = "\033[1;95m\n  ______     _______ ____   {}\n / ___\ \   / / ____/ ___|  ___ __ _ _ __\n| |    \ \ / /|  _| \___ \ / __/ _` | '_ \ \n| |___  \ V / | |___ ___) | (_| (_| | | | |\n \____|  \_/  |_____|____/ \___\__,_|_| |_|\n\033[0;m".format('v0.1#dev')
-print(intro_text)
+intro_text = "\033[1;95m\n  ______     _______ ____   {}\n / ___\ \   / / ____/ ___|  ___ __ _ _ __\n| |    \ \ / /|  _| \___ \ / __/ _` | '_ \ \n| |___  \ V / | |___ ___) | (_| (_| | | | |\n \____|  \_/  |_____|____/ \___\__,_|_| |_|\n\033[0;m"
+print(intro_text.format('v0.2.1#dev'))
 
 parser = argparse.ArgumentParser(usage='python {} [options]'.format(__file__))
 parser.add_argument('-i', metavar='IP', type=str, help='IP address. e.g 132.43.34.12')
@@ -68,7 +68,7 @@ def search(ip,vuln):
         except KeyboardInterrupt:
                 exit("User aborted!")
         except Exception as e:
-                exit(e)
+                printError(e)
 
 def scan(ip):
         try:
@@ -89,14 +89,14 @@ def scan(ip):
                                 dumpCSV(ip, tables[ip])
 
                 else:
-                        exit('{} does not have vulnebilities'.format(ip))
+                        printError('{} does not have vulnebilities'.format(ip))
 
         except KeyboardInterrupt:
                 exit("User aborted!")
         except KeyError:
-                exit('{} does not have vulnebilities'.format(ip))
+                printError('{} does not have vulnebilities'.format(ip))
         except Exception as e:
-                exit(e)
+                printError(e)
 
 def main():
         try:

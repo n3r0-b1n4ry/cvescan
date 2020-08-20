@@ -1,12 +1,14 @@
 # CVEScan
-<h3>version 0.2-alpha</h3>
+<h3>version 0.2.1-alpha</h3>
 
 CVEScan is a open-source tool, that using Shodan API to scan CVE of hosts
 
 Screenshot
 ---
 
-![screenshot](https://github.com/n3r0-b1n4ry/cvescan/blob/master/img/screenshot.PNG)
+![screenshot0](https://github.com/n3r0-b1n4ry/cvescan/blob/master/img/img1.PNG)
+
+![screenshot0](https://github.com/n3r0-b1n4ry/cvescan/blob/master/img/img2.PNG)
 
 Installation
 ---
